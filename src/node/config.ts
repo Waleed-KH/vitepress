@@ -99,7 +99,10 @@ export async function resolveConfig(
   }
 
   // resolve theme path
-  const userThemeDir = resolve(root, 'theme')
+  const userThemeDir = userConfig.themeDir
+    ? normalizePath(path.resolve(root, userConfig.themeDir))
+    : resolve(root, 'theme')
+
   const themeDir = (await fs.pathExists(userThemeDir))
     ? userThemeDir
     : DEFAULT_THEME_PATH
