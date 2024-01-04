@@ -1,6 +1,6 @@
 import { defineConfig } from 'vitepress'
-import { en } from './en'
-import { zh, search as zhSearch } from './zh'
+import { en } from './config/en'
+import { zh, search as zhSearch } from './config/zh'
 
 export default defineConfig({
   title: 'VitePress',
